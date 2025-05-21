@@ -159,13 +159,14 @@ python eval_gsm8k.py \
 
 ### Copyright
 
-These codes are based on the GitHub repository of MDLM [1], and partially LLADA[2].
+These codes are based on the GitHub repository of MDLM [1], and partially of LLADA [2].
 
 ---
 
 ## Reference
 
 [1] Sahoo, Subham, et al. "Simple and effective masked diffusion language models." *Advances in Neural Information Processing Systems* 37 (2024)
+
 [2] Nie, Shen, et al. "Large language diffusion models." *arXiv preprint arXiv:2502.09992* (2025).
 
 [3]Dubois, Yann, et al. "Length-controlled alpacaeval: A simple way to debias automatic evaluators." *arXiv preprint arXiv:2404.04475* (2024).
