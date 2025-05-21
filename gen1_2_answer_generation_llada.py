@@ -1,6 +1,3 @@
-# yb_LAMA_learn_and_forget_test_multigpu.py 
-# wloss2_e6_phi_여러 데이터 학습 및 eval.ipynb
-# 거의 참고함
 
 import os
 os.environ['NCCL_TIMEOUT_MS'] = '18000000'  #30분에서 5시간으로
@@ -26,7 +23,7 @@ from hydra import initialize, compose
 from hydra.core.global_hydra import GlobalHydra
 from answer_generation.answer_tool import ready_dataset, generation_eos_cut, generation_len_cut
 from finetune_tools import _ar_sampler_conditional, _sample_semi_ar
-from repeat_dpo_tools import _ddpm_topk_update, _ddpm_convolution_update
+from r2ft_tools import _ddpm_topk_update, _ddpm_convolution_update
 import diffusion
 import sys
 import json
@@ -60,7 +57,6 @@ original_cwd = os.getcwd()
 
 
 
-# os.environ['NCCL_TIMEOUT_MS'] = '9000000'  #30분에서 2시간30분으로
 
 
 rand_value = config.rand_value
@@ -106,16 +102,9 @@ def generate(model, rank, prompt, steps=128, gen_length=1024, block_length=512, 
              cfg_scale=0., remasking='low_confidence', mask_id=None):
     x = torch.full((1, prompt.shape[1] + gen_length), mask_id, dtype=torch.long).to(rank)
     x[:, :prompt.shape[1]] = prompt.clone()
-    # print(x.shape)
     prompt_index = (x != mask_id)
-    # if rank==0:
-        # print(model.tokenizer.batch_decode(x))
-    # assert gen_length % block_length == 0
-    # num_blocks = gen_length // block_length
     num_blocks = math.ceil(gen_length / block_length)
 
-    # assert steps % num_blocks == 0
-    # steps = steps // num_blocks
 
     for num_block in range(num_blocks):
         steps0 = steps // num_blocks
@@ -143,13 +132,13 @@ def generate(model, rank, prompt, steps=128, gen_length=1024, block_length=512, 
             if remasking == 'low_confidence':
                 p = F.softmax(logits.to(torch.float64), dim=-1)  
                 x0_p = torch.squeeze(
-                    torch.gather(p, dim=-1, index=torch.unsqueeze(x0, -1)), -1) # b, l   # 샘플링된 x0 의  probability
+                    torch.gather(p, dim=-1, index=torch.unsqueeze(x0, -1)), -1) 
             elif remasking == 'random':
                 x0_p = torch.rand((x0.shape[0], x0.shape[1]), device=rank)
             else:
                 raise NotImplementedError(remasking)
 
-            x0_p[:, prompt.shape[1] + (num_block + 1) * block_length:] = -np.inf    # 뒷부분 masking하도록.
+            x0_p[:, prompt.shape[1] + (num_block + 1) * block_length:] = -np.inf    
 
             x0 = torch.where(mask_index, x0, x)
             confidence = torch.where(mask_index, x0_p, -np.inf)
@@ -158,8 +147,6 @@ def generate(model, rank, prompt, steps=128, gen_length=1024, block_length=512, 
                 _, select_index = torch.topk(confidence[j], k=num_transfer_tokens[j, i])
                 transfer_index[j, select_index] = True
             x[transfer_index] = x0[transfer_index]
-            # if rank==0:
-                # print(model.tokenizer.batch_decode(x))
     return x
             
 def demo_basic(rank, world_size, test_data, generated_result, generated_results_dict): # run()
@@ -198,11 +185,9 @@ output : answer_generation/generated/{config.category}/{config.generator}/
             print("Unexpected keys:", unexpected_keys)
 
     data_sampler = DistributedSampler(test_data, num_replicas=world_size, rank=rank, shuffle=False) 
-    # dataloader_test = DataLoader(test_data, batch_size = config.batch_size,  sampler=data_sampler, drop_last=False)
     batch_size = 1
     dataloader_test = DataLoader(test_data, batch_size = 1,  sampler=data_sampler, drop_last=False)
     
-    # ddp_model = DDP(model, device_ids=[rank], find_unused_parameters=True) # 생각해보니 ddp 필요없음
     ddp_model = model
     ddp_model.eval()
     tqdm_disable = False if rank==0 else True
@@ -224,8 +209,7 @@ output : answer_generation/generated/{config.category}/{config.generator}/
         if config.model_max_length == 512:
             gen_length = config.model_max_length
         else:
-            gen_length = config.model_max_length - prompt.size(-1)  # llada 8B 에서는 tokenizer.model_max_length 가 이상한 수임임
-        # print(tokenizer.batch_decode(prompt))
+            gen_length = config.model_max_length - prompt.size(-1)  
         out = generate(ddp_model, rank, prompt, steps=config.sampling.steps, gen_length=gen_length, block_length=config.sampling.semi_ar_stride_length, temperature=config.temperature, cfg_scale=0., remasking='low_confidence', mask_id=model.mask_index)
         id = data['id'][0]
         if type(id)==torch.Tensor:
@@ -266,11 +250,10 @@ if __name__ == "__main__":
     
     """Main entry point for training."""
     L.seed_everything(config.seed)
-    n_gpus = torch.cuda.device_count() # 타이탄 서버는 3개
+    n_gpus = torch.cuda.device_count() 
     # assert n_gpus >= 2, f"Requires at least 2 GPUs to run, but got {n_gpus}"
 
     world_size = n_gpus
-    # test_data = load_dataset('json', data_files='src_data/alpaca_eval/alpaca_eval_questions.json')['train']
     test_data = load_dataset('json', data_files=f'src_data/alpaca_eval/{config.eval_data}_questions.json')['train'] # alpaca_eval_questions
     
     if 'test_size' in config:
@@ -300,9 +283,9 @@ if __name__ == "__main__":
         print(generated_results[0]['output'][:500])
 
         dics = {}
-        for line in generated_results:  #중복제거
+        for line in generated_results:  #
             dics[line['id']] = line  
-        sorted_values = [value for key, value in sorted(dics.items())]  # 정렬
+        sorted_values = [value for key, value in sorted(dics.items())]  # 
 
 
     with open(f'answer_generation/generated/{config.category}/{config.generator}/base.json', 'w') as f:

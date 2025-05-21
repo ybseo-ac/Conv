@@ -17,46 +17,26 @@ T: 0  # 0 (continuous time) / 1000
 Tp: 20 # permutations until t=T
 subs_masking: False
 
-### cppm ###
-permute_decode_type: uniderection # unidirection / commutative  # cppm
 
 ## train: 
 
-forward_type: ddpm # cppm / ddpm   # ddpm은 class only 를 의미
+forward_type: ddpm 
 
 # class noise schedule
-class_noise_type: absorbing  #  uniform / absorbing /absorb-uniform
+class_noise_type: absorbing  #  uniform / absorbing 
 uniform_gamma_denom: 4    #  larger -> noise is smaller
 uniform_gamma_type: linear # linear / convex / concave  # t에 따른 변화 확률 증감 스타일
 
 # position noise schedule
-positional_zeta_type: linear # linear / convex   # t에 따른 w + j 상한선 증감 스타일
+positional_zeta_type: linear # linear / convex   
 positional_zeta_min: 5
 positional_zeta_max: 100
 positional_transition_cycle: recurrent # recurrent / once    # recurrent : multiple times
 
-# theta_m
-lr_theta_m: 10
-theta_m_sample_type: only_m # only_m / blended_m
-theta_m_type: linear # linear/ add_linear
 
-# absolve-prior  #  if class_noise_type=='absorb-prior'
-moving_prior_mult: True
-prior_type: tfdf
-prior_line: pow
-prior_max: 0.9
-prior_reverse: False
-prior_kill_high_and_low: False  # bothkill.  reverse일 경우 prior high와 low 가 마스킹될 가능성을 모두 줄임 -> 모델이 둘을 덜 학습하게 만듦.
 
-# prior based filter
-train_prior_filter: False
-log_l_tilt: 1
-log_r_tilt: 1
-stds_l_tilt: 1
-stds_r_tilt: 1
-
-# repeat_dpo
-repeat_dpo:
+# r2ft
+r2ft:
   bool: False
   min_phase_len: 15
   beta_w: 1

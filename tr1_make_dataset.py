@@ -30,7 +30,7 @@ elif config.model_type=='llama':
     config.backbone='llama'
 config.model.length=1024
 config.sampling.predictor='ddpm'
-config.parameterization = 'subs'  # 이거는 여기서 하지 않으면 모델이 이렇게 안만들어짐
+config.parameterization = 'subs'  
 
 def _load_from_checkpoint(config, tokenizer):
   if 'hf' in config.backbone:

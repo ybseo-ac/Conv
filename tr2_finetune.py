@@ -30,7 +30,7 @@ from hydra import initialize, compose
 from hydra.core.global_hydra import GlobalHydra
 from answer_generation.answer_tool import ready_dataset, generation_eos_cut, generation_len_cut
 from finetune_tools import _ar_sampler_conditional, _sample_semi_ar, get_dataloaders_finetune
-from repeat_dpo_tools import _ddpm_topk_update, _ddpm_convolution_update
+from r2ft_tools import _ddpm_topk_update, _ddpm_convolution_update
 import diffusion
 import sys
 import json
@@ -70,7 +70,6 @@ def setup(rank, world_size):
     os.environ['NCCL_TIMEOUT_MS'] = '9000000'
     # os.environ['MASTER_PORT'] = '12355'
 
-    # 작업 그룹 초기화
     dist.init_process_group("nccl", rank=rank, world_size=world_size)
 
 def cleanup():
@@ -165,7 +164,6 @@ def demo_basic(rank, world_size, train_data, valid_data, trainer): # run()
             for step, batch_data in tqdm(enumerate(dataloader_train), disable=tqdm_disable, total=total_steps):
                 batch_data = {k: v.to(rank, non_blocking=True) for k, v in batch_data.items()}
                 loss, metrics = _compute_loss(ddp_model.module, batch_data, 'train')
-                # loss = ddp_model.module._compute_loss( batch_data, 'train')
 
                 if torch.isnan(loss).any():
                     print("nan 있음")
@@ -274,13 +272,11 @@ if __name__ == "__main__":
 
 
     with mp.Manager() as manager:
-        # learned_result = manager.list()
         learned_result = manager.dict()
         no_forget_result = manager.dict()
         loss_result = manager.dict()
 
         unchanged_ppl = manager.list()
-        # eval_result= manager.dict()
 
         run_demo(demo_basic, world_size, train_ds, valid_ds,  trainer)
 

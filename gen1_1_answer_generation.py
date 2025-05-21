@@ -20,7 +20,7 @@ from hydra import initialize, compose
 from hydra.core.global_hydra import GlobalHydra
 from answer_generation.answer_tool import ready_dataset, generation_eos_cut, generation_len_cut
 from finetune_tools import _ar_sampler_conditional, _sample_semi_ar
-from repeat_dpo_tools import _ddpm_topk_update, _ddpm_convolution_update
+from r2ft_tools import _ddpm_topk_update, _ddpm_convolution_update
 import diffusion
 import sys
 import json
@@ -140,7 +140,6 @@ output : answer_generation/generated/{config.category}/{config.generator}/
     data_sampler = DistributedSampler(test_data, num_replicas=world_size, rank=rank, shuffle=False) 
     dataloader_test = DataLoader(test_data, batch_size = config.batch_size,  sampler=data_sampler, drop_last=False)
     
-    # ddp_model = DDP(model, device_ids=[rank], find_unused_parameters=True) # 생각해보니 ddp 필요없음
     ddp_model = model
     ddp_model.eval()
     tqdm_disable = False if rank==0 else True
@@ -148,7 +147,7 @@ output : answer_generation/generated/{config.category}/{config.generator}/
     #####
     eps=1e-5
     num_steps = model.config.sampling.steps
-    timesteps = torch.linspace( 1, eps, num_steps + 1, device=rank)  # 1 -> 0  을 num_step +1 으로 나눔.
+    timesteps = torch.linspace( 1, eps, num_steps + 1, device=rank)  # divide   1 -> 0  by num_step +1 
     dt = (1 - eps) / num_steps
     
     
@@ -156,16 +155,12 @@ output : answer_generation/generated/{config.category}/{config.generator}/
     total_steps = len(dataloader_test) 
     for step, batch_data in tqdm(enumerate(dataloader_test) , total=total_steps, disable=tqdm_disable):
         xT = batch_data['xT'].to(rank)
-        # masked = xT == ddp_model.module.mask_index
         masked = xT == ddp_model.mask_index
         if config.sampling.semi_ar_bool:
-            # x, _ = _sample_semi_ar(ddp_model.module, batch_data)
             x, _ = _sample_semi_ar(ddp_model, batch_data)
         else:
-            # x = generate0(ddp_model.module, xT, timesteps, num_steps, dt, rank)
             x = generate0(ddp_model, xT, timesteps, num_steps, dt, rank)
         
-        # for i in range(batch_data['id'].size(0)):
         for i in range(len(batch_data['id'])):
             dic ={}
             id = batch_data['id'][i]
@@ -240,7 +235,7 @@ if __name__ == "__main__":
         dics = {}
         for line in generated_results:  # Removing redundunt data
             dics[line['id']] = line  
-        sorted_values = [value for key, value in sorted(dics.items())]  # 정렬
+        sorted_values = [value for key, value in sorted(dics.items())]  # 
 
 
     with open(f'answer_generation/generated/{config.category}/{config.generator}/base.json', 'w') as f:

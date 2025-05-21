@@ -38,11 +38,10 @@ def out_mask_repeat(model, i, x_t0, rand_val, min_phase_len=15):
     context_len = right - left
     
     # left side
-    phase_len = torch.randint(1, min(context_len +1 , left +1, min_phase_len), (1,)) #  < min  이기때문에, context_len +1 일 경우 phase_len 의 최대값은 context_len
+    phase_len = torch.randint(1, min(context_len +1 , left +1, min_phase_len), (1,)) #  < min  ,so if  context_len +1 , max of phase_len is context_len
     repeat = context[:phase_len]
     rand_permute = torch.randint(0, len(repeat),(1,))
-    for mask_i in range(1,left): # 왼쪽 1칸 남겨놓기 위해 1부터 함. 
-    # for mask_i in range(0,left): # eos 토큰까지 repeat
+    for mask_i in range(1,left): # to retain 1 position for left side
         x_t0[i][mask_i ] = repeat[(mask_i + rand_permute) % len(repeat) ]
     
     #right side
@@ -51,7 +50,6 @@ def out_mask_repeat(model, i, x_t0, rand_val, min_phase_len=15):
     rand_permute = torch.randint(0, len(repeat),(1,))
 
     for mask_i in range(right, x_t0.size(-1)-1):
-    # for mask_i in range(right, x_t0.size(-1)): # eos 토큰까지 repeat
         x_t0[i][mask_i] = repeat[(mask_i + rand_permute) % len(repeat) ]
 
 
@@ -91,19 +89,18 @@ def repeat_q_xt(model, x0):
     xb = xt.clone()
     for i in range(x0.size(0)):
         if in_or_out[i]:
-            in_mask_repeat(model, i, xb, rand_val, model.config.repeat_dpo.min_phase_len)
+            in_mask_repeat(model, i, xb, rand_val, model.config.r2ft.min_phase_len)
         else:
-            out_mask_repeat(model, i, xb, rand_val, model.config.repeat_dpo.min_phase_len)
+            out_mask_repeat(model, i, xb, rand_val, model.config.r2ft.min_phase_len)
         
     return xt, xb, mask
 
 
-def _forward_pass_diffusion_repeat_DPO(self, x0, attention_mask): # diffusion은 여기서 주로 함.
-    t = self._sample_t(x0.shape[0], x0.device) # 데이터가 4개면 4개의 0~1 수 뽑음 (랜덤 time)
-    if self.T > 0: # T=0이면 t:0~1 / T>0 이면 t:0~T (근데 다시 0~1로 discrete하게 쪼갬)
+def _forward_pass_diffusion_r2ft(self, x0, attention_mask): # 
+    t = self._sample_t(x0.shape[0], x0.device) # random scalar for batch size
+    if self.T > 0: # T=0 -> t:0~1 / T>0 -> t:0~T 
       t = (t * self.T).to(torch.int)
       t = t / self.T
-      # t \in {1/T, 2/T, ..., 1}
       t += (1 / self.T)
 
     if self.change_of_variables: # False
@@ -115,8 +112,8 @@ def _forward_pass_diffusion_repeat_DPO(self, x0, attention_mask): # diffusion은
     else:
       sigma, dsigma = self.noise(t)
       unet_conditioning = sigma[:, None]
-      move_chance = 1 - torch.exp(-sigma[:, None]) # 풀어보면 그냥 t 그자체임 ***    # sigma = -log(1-t)
-    ##### move_chance, t   사실상 쓰이지 않음 #####
+      move_chance = 1 - torch.exp(-sigma[:, None]) # similar to t
+    ##### move_chance, t   is not actually used #####
 
 
 
@@ -143,17 +140,17 @@ def _forward_pass_diffusion_repeat_DPO(self, x0, attention_mask): # diffusion은
             dim=-1,
             index=xb[:, :, None]).squeeze(-1) * mask
         
-        if self.config.repeat_dpo.denom=='mask_len':
+        if self.config.r2ft.denom=='mask_len':
             denom = mask.sum(dim=-1)
-        elif self.config.repeat_dpo.denom=='seq_len':
+        elif self.config.r2ft.denom=='seq_len':
             denom = mask.size(dim=-1)
         else:
-            raise Exception("!!! choose repeat_dpo denom type")
+            raise Exception("!!! choose r2ft denom type")
         
         log_p_l[:,0] = 0  #
         log_p_l[:,-1] = 0
         
-        loss = - torch.log(torch.sigmoid( (((self.config.repeat_dpo.beta_w * log_p_w.sum(dim=-1)) - (self.config.repeat_dpo.beta_l * log_p_l.sum(dim=-1)))  / denom)- self.config.repeat_dpo.gamma)) - ((self.config.repeat_dpo.beta_a * log_p_w.sum(dim=-1))/denom)
+        loss = - torch.log(torch.sigmoid( (((self.config.r2ft.beta_w * log_p_w.sum(dim=-1)) - (self.config.r2ft.beta_l * log_p_l.sum(dim=-1)))  / denom)- self.config.r2ft.gamma)) - ((self.config.r2ft.beta_a * log_p_w.sum(dim=-1))/denom)
         
         loss = loss.sum()
         
@@ -166,10 +163,10 @@ def _forward_pass_diffusion_repeat_DPO(self, x0, attention_mask): # diffusion은
         raise Exception("!!!!! parameterization not yet prepared !!!!!!!")
 
 
-def _loss_dpo(self, x0, attention_mask, prefix=None):
+def _loss_r2ft(self, x0, attention_mask, prefix=None):
     (input_tokens, output_tokens, attention_mask) = self._maybe_sub_sample(x0, attention_mask)
     
-    loss, history_log_p_w, history_log_p_l  = _forward_pass_diffusion_repeat_DPO(self, input_tokens, attention_mask)
+    loss, history_log_p_w, history_log_p_l  = _forward_pass_diffusion_r2ft(self, input_tokens, attention_mask)
     
         
     

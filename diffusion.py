@@ -12,7 +12,7 @@ import torch.nn.functional as F
 import torchmetrics
 import transformers
 from torch import Tensor
-import torch.nn as nn #cppm
+import torch.nn as nn 
 
 import dataloader
 import models
@@ -21,10 +21,8 @@ import utils
 from collections import defaultdict, OrderedDict
 from tqdm import tqdm
 from timeit import default_timer
-from finetune_tools import _loss_finetune, _sample_conditional, prior_std_mean_calcul_conditional, _loss_finetune_dpo, _ar_sampler_conditional
-from repeat_dpo_tools import _loss_dpo, _ddpm_topk_update, rep_4gram_calcul, prior_std_mean_calcul, _ddpm_convolution_update, _ddpm_topk_caching_update
-# from cppm_tools import giveme_endoftext_index, random_param_for_permute, forward_permute, uniform_class_noise, hyperparam_for_positional, hyperparam_for_uniform, add_paddings_after_permute, forward_recurrent_permute, weighted_loss_theta_m
-# from ar_tools import _ar_sampler_conditional
+from finetune_tools import _loss_finetune, _sample_conditional, prior_std_mean_calcul_conditional, _loss_finetune_r2ft, _ar_sampler_conditional
+from r2ft_tools import _loss_r2ft, _ddpm_topk_update, rep_4gram_calcul, prior_std_mean_calcul, _ddpm_convolution_update, _ddpm_topk_caching_update
 
 
 LOG2 = math.log(2)
@@ -49,9 +47,6 @@ class Loss:
   loss: torch.FloatTensor
   nlls: torch.FloatTensor
   token_mask: torch.FloatTensor
-  # theta_m_loss: torch.FloatTensor #cppm.  theta_m loss
-  # theta_c_loss: torch.FloatTensor #cppm.  theta_c loss
-  # theta_p_loss: torch.FloatTensor #cppm.  theta_p loss
 
 
 class NLL(torchmetrics.aggregation.MeanMetric):
@@ -117,9 +112,6 @@ class Diffusion(L.LightningModule):
         self.config, vocab_size=self.vocab_size)
     elif self.config.backbone == 'dit_positional': #
       self.backbone = models.dit.DIT_positional(
-        self.config, vocab_size=self.vocab_size)
-    elif self.config.backbone == 'dit_theta_m': #
-      self.backbone = models.dit.DIT_theta_m(
         self.config, vocab_size=self.vocab_size)
     elif self.config.backbone == 'dimamba':
       self.backbone = models.dimamba.DiMamba(
@@ -244,16 +236,6 @@ class Diffusion(L.LightningModule):
     self.fast_forward_batches = None
     self._validate_configuration()
     
-    if self.parameterization == 'dit_theta_m':
-      self.sigmoid = nn.Sigmoid()  #cppm
-      self.bcelogitloss = nn.BCEWithLogitsLoss (reduction='none') # reduction='none' : sum, mean 없음// BCELoss(sigmoid()) 두번 거치는건 정확도가 떨어진다고 해서 이거로 함 #cppm
-      
-    if self.config.class_noise_type=='absorb-prior':
-      # 관련 내용은 self.backbone 안에서 initialize
-      assert self.backbone.token_prior.size(0) == self.tokenizer.vocab.__len__()
-      
-      pass
-    
       
 
   def _validate_configuration(self):
@@ -262,7 +244,7 @@ class Diffusion(L.LightningModule):
     if self.parameterization == 'sedd':
       assert not self.importance_sampling
       assert not self.change_of_variables
-    # if self.parameterization == 'd3pm':  #cppm. 지움  continuous d3pm 가능하도록
+    # if self.parameterization == 'd3pm':  #  continuous d3pm 
       # assert self.T > 0
     if self.T > 0:
       assert self.parameterization in {'d3pm', 'subs'}
@@ -403,24 +385,6 @@ class Diffusion(L.LightningModule):
                                       keepdim=True)
     return logits
 
-  def _theta_m_parameterization(self, logits, logits_m, x, attention_mask=None): # theta_m 에서의 x_c, x_m 에 대한 parameterization
-    ## x_c
-    # mask 는 무조건 안됨
-    # logits[:, :, self.mask_index] += self.neg_infinity 
-    # mask로 지목되면 자기자신으로 유지해도 안됨
-    # logits[torch.arange(logits.shape[0])[:, None, None],  # Batch indices
-    #       torch.arange(logits.shape[1])[None, :, None],  # Row indices
-    #       x.unsqueeze(-1)] += self.neg_infinity
-    
-    logits = logits - torch.logsumexp(logits, dim=-1,   # just log softmax
-                                      keepdim=True)
-    
-    ## x_m
-    # [pad] 는 무조건 True 로 예측.
-    # padding_inside = (x==self.mask_index * attention_mask).bool()
-    # logits_m[padding_inside] += 999999999
-    return logits, logits_m
-
   def _sedd_parameterization(self, logits, xt, sigma):
     esigm1_log = torch.where(
       sigma < 0.5,
@@ -458,12 +422,6 @@ class Diffusion(L.LightningModule):
     else:
       logits = self.backbone(x, sigma).to(torch.float32) # 여기서부터 not deterministic
         
-    if self.config.backbone=='dit_theta_m':
-      logits, logits_m = logits 
-      # both are logits
-      # logits: batch_size x lenght x vocab size
-      # logits_m : batch_size x length x 1
-      # prefer: subs_masking=True,  parameterization=d3pm
       
     if self.config.backbone=='dit_positional': #cppm.   backbone 에서  (x_cl, x_p) 가 나온다는 뜻
       logits, logits_p = logits
@@ -532,13 +490,13 @@ class Diffusion(L.LightningModule):
       
     
     
-    # assert (self.config.repeat_dpo.bool==self.config.finetune.bool ==True) ==False    # raise exception if repeat_dpo, finetune is True at the same time
+    # assert (self.config.r2ft.bool==self.config.finetune.bool ==True) ==False    # raise exception if r2ft, finetune is True at the same time
     
-    if self.config.repeat_dpo.bool and self.config.finetune.bool:
-      losses = _loss_finetune_dpo(self, batch['x0'], batch['xT'], attention_mask, prefix)
+    if self.config.r2ft.bool and self.config.finetune.bool:
+      losses = _loss_finetune_r2ft(self, batch['x0'], batch['xT'], attention_mask, prefix)
     
-    elif self.config.repeat_dpo.bool:
-      losses = _loss_dpo(self, batch['input_ids'], attention_mask, prefix)
+    elif self.config.r2ft.bool:
+      losses = _loss_r2ft(self, batch['input_ids'], attention_mask, prefix)
     elif self.config.finetune.bool:
       losses = _loss_finetune(self, batch['x0'], batch['xT'], attention_mask, prefix)
     else:
@@ -565,8 +523,8 @@ class Diffusion(L.LightningModule):
     
     return loss
 
-  def on_train_epoch_start(self):  # lightning 내부 func. epoch 시작하면 바로 실행되는거인듯.
-    self.backbone.train() # train 으로 전환?
+  def on_train_epoch_start(self):  # lightning innate func.
+    self.backbone.train() 
     self.noise.train()
 
   def training_step(self, batch, batch_idx):
@@ -579,13 +537,6 @@ class Diffusion(L.LightningModule):
     return loss
 
   def on_validation_epoch_start(self):
-    # if self.ema:
-    #   self.ema.store(itertools.chain(
-    #     self.backbone.parameters(),
-    #     self.noise.parameters()))
-    #   self.ema.copy_to(itertools.chain(
-    #     self.backbone.parameters(),
-    #     self.noise.parameters()))
     self.backbone.eval()
     self.noise.eval()
     assert self.valid_metrics.nll.mean_value == 0
@@ -660,9 +611,6 @@ class Diffusion(L.LightningModule):
             self.prior_mean_MSE_metric.update(prior_mean_MSE, torch.ones_like(prior_mean_MSE))
             self.prior_std_metric.update(prior_std, torch.ones_like(prior_std))
             self.prior_std_MSE_metric.update(prior_std_MSE, torch.ones_like(prior_std_MSE))
-            # prior_mean_l2 :  (prior_mean - logs_med)**2 ,  [batchsize]
-            # prior_std_l2 :  (prior_std - stds_med)**2 ,  [batchsize]
-            # metric 안에 들어가면 .sum().sqrt() 됨.
             
             
         if self.trainer.global_rank == 0 and hasattr(
@@ -978,13 +926,7 @@ class Diffusion(L.LightningModule):
                                      device=self.device)
       if self.sampler == 'analytic':
         x = self._denoiser_update(x, t)
-      elif self.sampler == 'ddpm_theta_m':
-        unet_conditioning = self.noise(t)[0]
-        x_c, x_m = self.forward(x, unet_conditioning) # logprob c, logits m,//  batch x len x voc , batch x len x 1
-        x_c = x_c.argmax(dim=-1)  # batch_size(1) x len
-        x_m = (self.sigmoid(x_m) >0.5).squeeze(-1)  # batch_size(1) x len
-        x[x_m] = x_c[x_m] # replace elem in x with x_c, only when x_m > 0.5
-        
+     
       else:
         unet_conditioning = self.noise(t)[0]
         x = self.forward(x, unet_conditioning)
@@ -1018,24 +960,7 @@ class Diffusion(L.LightningModule):
   def get_score(self, x, sigma):
     model_output = self.forward(x, sigma)
     if self.parameterization == 'subs':
-      # score(x, t) = p_t(y) / p_t(x)
-      # => log score(x, t) = log p_t(y) - log p_t(x)
-      
-      # case 1: x = masked
-      #   (i) y = unmasked
-      #     log score(x, t) = log p_\theta(x)|_y + log k
-      #     where k = exp(- sigma) / (1 - exp(- sigma))
-      #   (ii) y = masked
-      #     log score(x, t) = 0
-
-      # case 2: x = unmasked
-      #   (i) y != masked, y != x
-      #     log score(x_i, t) = - inf
-      #   (ii) y = x 
-      #     log score(x_i, t) = 0
-      #   (iii) y = masked token
-      #     log score(x_i, t) = - log k
-      #     where k = exp(- sigma) / (1 - exp(- sigma))
+     
       
       log_k = - torch.log(torch.expm1(sigma)).squeeze(-1)
       assert log_k.ndim == 1

@@ -346,7 +346,6 @@ def get_dataset(
     dataset = datasets.load_dataset(
       'openwebtext',
       split='train[:-100000]',
-      # cache_dir='/data/ybseo/for_mdlm/data',
       cache_dir=cache_dir,
       streaming=streaming)
   elif dataset_name == 'openwebtext-valid':
@@ -354,7 +353,6 @@ def get_dataset(
       'openwebtext',
       split='train[-100000:]',
       cache_dir=cache_dir,
-      # cache_dir='/data/ybseo/for_mdlm/data',
       streaming=streaming)
   elif dataset_name == 'scientific_papers_arxiv':
     dataset = datasets.load_dataset(

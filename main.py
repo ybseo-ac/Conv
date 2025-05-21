@@ -180,29 +180,11 @@ def _train(config, logger, tokenizer):
 
   model = diffusion.Diffusion(
     config, tokenizer=valid_ds.tokenizer)
-    
-  # if model.config.lora.bool :   # 여기서 부르면 오류남남
-  #       print("!!!!!!  Lora initialilze !!!!!!!!")
-  #       from peft import LoraConfig, get_peft_model
-  #       import bitsandbytes as bnb
-  #       peft_config = LoraConfig(
-  #           lora_alpha = config.lora.lora_alpha,
-  #           lora_dropout= config.lora.lora_dropout,
-  #           r=config.lora.lora_r,
-  #           bias="none",
-  #           target_modules=[
-  #               "q_proj",
-  #               "v_proj",
-  #               "k_proj",
-  #               'ff_proj',
-  #               'up_proj'
-  #           ],
-  #       )
-  #       model.backbone = get_peft_model(model.backbone, peft_config)
+   
   
-  if config.init_from_checkpoint.bool and config.init_from_checkpoint.init_file != '': #cppm
+  if config.init_from_checkpoint.bool and config.init_from_checkpoint.init_file != '': 
     logger.info(f"## Train from initial checkpoint : {config.init_from_checkpoint.init_file}")
-    state_dict = torch.load(config.init_from_checkpoint.init_file, map_location=torch.device('cpu')) # 디폴트로 cuda:0 이어서 cpu로 불러야됨. 안그럼 cuda:0 에 잔뜩 올라감
+    state_dict = torch.load(config.init_from_checkpoint.init_file, map_location=torch.device('cpu')) # 
     if 'state_dict' in state_dict:
       state_dict = state_dict['state_dict']
 

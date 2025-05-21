@@ -1,7 +1,7 @@
 import torch
 import utils
 from dataclasses import dataclass
-from repeat_dpo_tools import _ddpm_topk_update, _ddpm_topk_caching_update
+from r2ft_tools import _ddpm_topk_update, _ddpm_topk_caching_update
 from datasets import load_from_disk
 from tqdm import tqdm
 @dataclass
@@ -272,7 +272,7 @@ def get_dataloaders_finetune(config, tokenizer, skip_train=False,
     valid_loader.tokenizer = tokenizer
     return train_loader, valid_loader
     
-###################################  finetune  rDPO  #######################
+###################################  finetune  r2ft  #######################
 
 # noise type:  query 이후는 모두 padding. query 내에서 무작위로 phase 추출. 해당 phase를 반복함
 def q_xt_finetune_repeat_naive(self, x, xT, move_chance):
@@ -345,7 +345,7 @@ def q_xt_finetune_repeat(self, x, xT, move_chance):
   return xb, xt, repeat_mask 
 
 
-def _forward_pass_diffusion_finetune_rDPO(self, x0, xT, attention_mask): 
+def _forward_pass_diffusion_finetune_r2ft(self, x0, xT, attention_mask): 
     t = self._sample_t(x0.shape[0], x0.device) 
     if self.T > 0: # T=0이면 t:0~1 / T>0 이면 t:0~T (근데 다시 0~1로 discrete하게 쪼갬)
       t = (t * self.T).to(torch.int)
@@ -394,7 +394,7 @@ def _forward_pass_diffusion_finetune_rDPO(self, x0, xT, attention_mask):
         # log_p_l[:,0] = 0  # 여기선 이거 필요 없을듯
         # log_p_l[:,-1] = 0
         
-        loss = - torch.log(torch.sigmoid( ((self.config.repeat_dpo.beta_w * log_p_w.sum(dim=-1) /denom_w) - (self.config.repeat_dpo.beta_l * log_p_l.sum(dim=-1) /denom_l))- self.config.repeat_dpo.gamma)) - ((self.config.repeat_dpo.beta_a * log_p_w.sum(dim=-1))/denom_w)
+        loss = - torch.log(torch.sigmoid( ((self.config.r2ft.beta_w * log_p_w.sum(dim=-1) /denom_w) - (self.config.r2ft.beta_l * log_p_l.sum(dim=-1) /denom_l))- self.config.r2ft.gamma)) - ((self.config.r2ft.beta_a * log_p_w.sum(dim=-1))/denom_w)
         
         loss = loss.sum()
         
@@ -408,26 +408,13 @@ def _forward_pass_diffusion_finetune_rDPO(self, x0, xT, attention_mask):
 
 
 
-def _loss_finetune_dpo(self, x0, xT, attention_mask, prefix=None):
-    # (input_tokens, output_tokens, attention_mask) = self._maybe_sub_sample(x0, attention_mask)
+def _loss_finetune_r2ft(self, x0, xT, attention_mask, prefix=None):
 
     if self.parameterization=='ar':
-      loss, history_log_p_w, history_log_p_l  = _forward_pass_AR_finetune_rDPO(self,  x0, xT, attention_mask)
+      loss, history_log_p_w, history_log_p_l  = _forward_pass_AR_finetune_r2ft(self,  x0, xT, attention_mask)
     else:
-      loss, history_log_p_w, history_log_p_l  = _forward_pass_diffusion_finetune_rDPO(self,  x0, xT, attention_mask)
+      loss, history_log_p_w, history_log_p_l  = _forward_pass_diffusion_finetune_r2ft(self,  x0, xT, attention_mask)
     
-    # if prefix=='train':
-    #     self.log(name='trainer/loss_w', value=history_log_p_w.item(), on_step=True, on_epoch=False, sync_dist=True)
-    #     self.log(name='trainer/loss_l', value=history_log_p_l.item(), on_step=True, on_epoch=False, sync_dist=True)
-    
-    # if prefix=='val':
-    #     self.valid_dpo_w_metrics.update(torch.ones_like(attention_mask, device=attention_mask.device)* history_log_p_w.detach())
-    #     metrics_w = self.valid_dpo_w_metrics
-    #     self.valid_dpo_l_metrics.update(torch.ones_like(attention_mask, device=attention_mask.device)* history_log_p_l.detach())
-    #     metrics_l = self.valid_dpo_l_metrics
-    #     self.log_dict(metrics_w ,on_step=False,on_epoch=True,sync_dist=True)
-    #     self.log_dict(metrics_l ,on_step=False,on_epoch=True,sync_dist=True)
-        
     
     return Loss(loss=loss, token_mask=attention_mask, nlls=torch.ones_like(attention_mask, device=attention_mask.device)* loss.detach(), loss_w=history_log_p_w, loss_l=history_log_p_l )
 
@@ -437,26 +424,25 @@ def _loss_finetune_dpo(self, x0, xT, attention_mask, prefix=None):
 
 ## sft loss
 def ar_preprocess(self, x0, attention_mask):
-  ##. diffusion LM SFT 데이터셋은 좌로 정렬, 패딩은 우측임.  이를 우측 정렬로 바꿔주는 장치. (expp10_2_4.ipynb)
+  ##. reorder left-order to right-order
   # print(f"{self.tokenizer.eos_token_id}  {self.tokenizer.pad_token_id}")
   assert x0.size(-1) == self.tokenizer.model_max_length
   content_len = (x0 != self.tokenizer.eos_token_id).sum(dim=-1)
   num_cols = attention_mask.shape[1]
   batch_indices = torch.arange(num_cols).repeat(x0.shape[0], 1).to(x0.device)  # [[0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7]]
   x0[batch_indices > content_len.unsqueeze(-1) +1] = self.tokenizer.pad_token_id  # eos ~~~ eos pad pad pad 
-  # 문장을 eos로 감싸고 나머지는 pad로 바꿔줌
+  
   if self.config.ar.eos_after_gen:
       min_mask_len = torch.min((x0 == self.mask_index).sum(dim=-1))
   else:
       min_mask_len = 0
-  shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +2 + min_mask_len)  % num_cols   #  +2 : eos 까지 같이 옮기기 위함
+  shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +2 + min_mask_len)  % num_cols   #  +2  includes  two EOS tokens
   new_input_ids = torch.gather(x0, 1, shifted_indices).to(x0.device)
   new_attention_mask = torch.gather(attention_mask, 1, shifted_indices)
 
   if self.config.ar.eos_after_gen:  
       new_input_ids[:,content_len.max() +1 :] = self.tokenizer.eos_token_id
       new_attention_mask[:,content_len.max() +1 :] = 1
-  # 원래 _maybe_sub_sample 에 있던 기능
   input_tokens = new_input_ids[:, :-1]
   output_tokens = new_input_ids[:, 1:]
   new_attention_mask = new_attention_mask[:, 1:] 
@@ -517,7 +503,7 @@ def _ar_sampler_conditional(self, batch):
     content_len = (x != self.tokenizer.pad_token_id).sum(dim=-1)
     num_cols = x.shape[1]
     batch_indices = torch.arange(num_cols).repeat(x.shape[0], 1).to(self.device)  # [[0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7]]
-    shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +0)  % num_cols   # 끝에 패딩 없어야돼서 0
+    shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +0)  % num_cols   # +0 to remove padding
     new_input_ids = torch.gather(x, 1, shifted_indices).to(x.device)
     pad_cut =(new_input_ids==self.tokenizer.pad_token_id).sum(dim=-1).min()
     x = new_input_ids[:, pad_cut:].to(self.device)
@@ -532,7 +518,7 @@ def _ar_sampler_conditional(self, batch):
       if self.backbone=='llama':
         next_logits = self.forward(x)[:, -1].to(torch.bfloat16)
       else:
-        next_logits = self.forward(x, None)[:, -1]  # softmax 돼서 나오는듯
+        next_logits = self.forward(x, None)[:, -1]  # softmax 
       
       # nucleus decoding
       if self.config.ar.decoding == 'nucleus':
@@ -545,22 +531,21 @@ def _ar_sampler_conditional(self, batch):
       x= torch.concat((x, sampled_ind), dim=-1)
       
     
-    finetune_mask = (x != self.mask_index).int()  # query + answer 전부 포함  (diffusion이랑 다름)
+    finetune_mask = (x != self.mask_index).int()  # query + answer 
       
     return x, finetune_mask
 
 
-## rdpo
-
+## r2ft
 
   
-def ar_rdpo_preprocess(self, x, attention_mask):
+def ar_r2ft_preprocess(self, x, attention_mask):
     x = x.to(self.device)
     attention_mask = attention_mask.to(self.device)
     content_len = (x != self.tokenizer.pad_token_id).sum(dim=-1).to(self.device)
     num_cols = x.shape[1]
     batch_indices = torch.arange(num_cols).repeat(x.shape[0], 1).to(self.device)  # [[0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7]]
-    shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +0)  % num_cols   # 끝에 패딩 없어야돼서 0
+    shifted_indices = (batch_indices - self.tokenizer.model_max_length + content_len.view(-1, 1) +0)  % num_cols   # +0 to remove padding
     new_x = torch.gather(x, 1, shifted_indices).to(x.device)
     new_attention_mask = torch.gather(attention_mask, 1, shifted_indices).to(x.device)
 
@@ -569,13 +554,13 @@ def ar_rdpo_preprocess(self, x, attention_mask):
     new_attention_mask = new_attention_mask[:, 1:] 
     return input_new_x , output_new_x, new_attention_mask
   
-def _forward_pass_AR_finetune_rDPO(self, x0, xT, attention_mask):
-  xb, xt, repeat_mask = q_xt_finetune_repeat(self, x0, xT, None) # repeat_mask : repeat_q_xt 에서의 mask 역할
+def _forward_pass_AR_finetune_r2ft(self, x0, xT, attention_mask):
+  xb, xt, repeat_mask = q_xt_finetune_repeat(self, x0, xT, None) # repeat_mask : role of mask in repeat_q_xt
     # xb : rejected label   with repeated patterns
-    # ar에서는 xt 가 필요없음.
+    # ar doesn't need xt 
     
-  ## 좌측정렬을 우측정렬로 바꿔주기 
-  input_xb, output_xb, repeat_mask = ar_rdpo_preprocess(self, xb, repeat_mask)
+  ## left order ot right order
+  input_xb, output_xb, repeat_mask = ar_r2ft_preprocess(self, xb, repeat_mask)
   input_x0, output_x0, attention_mask = ar_preprocess(self, x0, attention_mask)  
   
    
@@ -585,7 +570,7 @@ def _forward_pass_AR_finetune_rDPO(self, x0, xT, attention_mask):
   log_p_l = - xb_logprobs.gather(-1, output_xb[:, :, None])[:, :, 0].squeeze(-1) * repeat_mask
   denom_w = attention_mask.sum(dim=-1)
   denom_l = repeat_mask.sum(dim=-1)
-  loss = - torch.log(torch.sigmoid( ((self.config.repeat_dpo.beta_w * log_p_w.sum(dim=-1) /denom_w) - (self.config.repeat_dpo.beta_l * log_p_l.sum(dim=-1) /denom_l))- self.config.repeat_dpo.gamma)) - ((self.config.repeat_dpo.beta_a * log_p_w.sum(dim=-1))/denom_w)
+  loss = - torch.log(torch.sigmoid( ((self.config.r2ft.beta_w * log_p_w.sum(dim=-1) /denom_w) - (self.config.r2ft.beta_l * log_p_l.sum(dim=-1) /denom_l))- self.config.r2ft.gamma)) - ((self.config.r2ft.beta_a * log_p_w.sum(dim=-1))/denom_w)
   
   loss = loss.sum()
   
@@ -600,7 +585,7 @@ def _forward_pass_AR_finetune_rDPO(self, x0, xT, attention_mask):
 ########### semi-AR  sampling ##########
 @torch.no_grad()
 def _sample_semi_ar(self, batch, num_steps=None, eps=1e-5, tqdm_disable=True):
-  ##### input으로 주어지는 것 #####
+  ##### input #####
   # S = num_steps
   # L = total token length
   # _L = block stride_length
@@ -620,25 +605,25 @@ def _sample_semi_ar(self, batch, num_steps=None, eps=1e-5, tqdm_disable=True):
   assert   S % B == 0
   assert  _S >=1
 
-  # dt = (1 - eps) / _S  # _sample_conditional  안에서 구해짐.
+  # dt = (1 - eps) / _S  # _sample_conditional 
 
 
   ### preparing  
   n_samples = batch['xT'].size(0)
   ones = torch.ones(n_samples, dtype=self.dtype,
                       device=self.device)
-  finetune_mask = (batch['xT'] == self.mask_index).int()  # 직접 생성한거   를 나타내게 될 것
+  finetune_mask = (batch['xT'] == self.mask_index).int()  # generated
   prompted = (batch['xT'] != self.mask_index).to(self.device) # in case of conditioned generation
   
   for stride in tqdm(range(B + 1), disable=tqdm_disable):
     x , _ = _sample_conditional(self, batch, _S)    
 
-    x = self.forward(x, 0 * ones).argmax(dim=-1) # 0*ones 는 의미 없음
-        # 1024 전체에 mask가 많이 남아있음. 그걸 기냥 한방에 다 채우는거임
+    x = self.forward(x, 0 * ones).argmax(dim=-1) # 0*ones  means nothing
+        # 1024 has maskes. Fill all masks at once
     
     unmasked = torch.ones_like(x).bool()
     unmasked[:,    _L * (stride +1 ) :] =False
-    unmasked = (unmasked | prompted)  # conditioned generation의 경우 prompt 가 _L보다 길 경우 첫번째 stride에서 잘리는 경우가 있음. 이를 막기 위함.
+    unmasked = (unmasked | prompted)  
     
     x[~ unmasked] = self.mask_index
     
@@ -647,7 +632,7 @@ def _sample_semi_ar(self, batch, num_steps=None, eps=1e-5, tqdm_disable=True):
       x[eos_found] = self.tokenizer.eos_token_id     
       
     
-    batch['xT']= x  # 여기에 태워서 다시 inference 시킴.
+    batch['xT']= x  #  infer with this
     
   
   return x, finetune_mask

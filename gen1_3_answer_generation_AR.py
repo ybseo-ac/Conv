@@ -1,6 +1,3 @@
-# yb_LAMA_learn_and_forget_test_multigpu.py 
-# wloss2_e6_phi_여러 데이터 학습 및 eval.ipynb
-# 거의 참고함
 
 import os
 os.environ['NCCL_TIMEOUT_MS'] = '18000000'  #30분에서 5시간으로
@@ -26,7 +23,7 @@ from hydra import initialize, compose
 from hydra.core.global_hydra import GlobalHydra
 from answer_generation.answer_tool import ready_dataset, generation_eos_cut, generation_len_cut
 from finetune_tools import _ar_sampler_conditional
-from repeat_dpo_tools import _ddpm_topk_update
+from r2ft_tools import _ddpm_topk_update
 import diffusion
 import sys
 import json
@@ -70,7 +67,6 @@ def setup(rank, world_size):
     os.environ["NCCL_BLOCKING_WAIT"] = "0"
     os.environ['NCCL_TIMEOUT_MS'] = '18000000'
 
-    # 작업 그룹 초기화
     dist.init_process_group("nccl", rank=rank, world_size=world_size, timeout=timedelta(seconds=7200000))
 
 def cleanup():
@@ -79,26 +75,7 @@ def cleanup():
 #################################
 
 
-    
-# @torch.no_grad()
-# def generate0(model,x, timesteps, num_steps, dt , rank):
-#     p_x0_cache = None
-#     for i in range(num_steps):
-#         t = timesteps[i] * torch.ones(x.shape[0], 1, device= rank) # shape 는 (batch size, 1)
-#         if config.sampler == 'ddpm':
-#             x = model.module._ddpm_update(x, t, dt)
-#         elif config.sampler == 'ddpm_topk':
-#             x = _ddpm_topk_update(model.module, x, t, dt)
-#         elif config.sampler == 'ddpm_cache':
-#             p_x0_cache, x_next = model.module._ddpm_caching_update(x, t, dt, p_x0=p_x0_cache)
-#             if (not torch.allclose(x_next, x) or config.time_conditioning):
-#                 # Disable caching
-#                 p_x0_cache = None
-#             x = x_next
-#         else:
-#             x = model.module._analytic_update(x, t, dt)
-#     return x
-    
+
             
 def demo_basic(rank, world_size, test_data, generated_result, generated_results_dict): # run()
     print(f"Running basic DDP example on rank {rank}.")
@@ -140,12 +117,7 @@ output : answer_generation/generated/{config.category}/{config.generator}/
     ddp_model.eval()
     tqdm_disable = False if rank==0 else True
 
-    #####
-    # eps=1e-5
-    # num_steps = model.config.sampling.steps
-    # timesteps = torch.linspace( 1, eps, num_steps + 1, device=rank)  # 1 -> 0  을 num_step +1 으로 나눔.
-    # dt = (1 - eps) / num_steps
-    
+
     
     dataset=[]
     total_steps = len(dataloader_test) 
@@ -181,7 +153,7 @@ batch_data:
 """
 
 def run_demo(demo_fn, world_size, test_data, generated_results, generated_results_dict):
-    mp.spawn(demo_fn,  # demo_fn  이  5번파일 run() 과 같음
+    mp.spawn(demo_fn, 
             args=(world_size, test_data, generated_results, generated_results_dict),
             nprocs=world_size,
             join=True)
@@ -197,11 +169,10 @@ if __name__ == "__main__":
     
     """Main entry point for training."""
     L.seed_everything(config.seed)
-    n_gpus = torch.cuda.device_count() # 타이탄 서버는 3개
+    n_gpus = torch.cuda.device_count()
     # assert n_gpus >= 2, f"Requires at least 2 GPUs to run, but got {n_gpus}"
 
     world_size = n_gpus
-    # test_data = load_dataset('json', data_files='src_data/alpaca_eval/alpaca_eval_questions.json')['train']
     test_data = load_dataset('json', data_files=f'src_data/alpaca_eval/{config.eval_data}.json')['train'] # alpaca_eval_questions
     
     if 'test_size' in config:
@@ -230,9 +201,9 @@ if __name__ == "__main__":
         print(generated_results[0]['output'][:500])
 
         dics = {}
-        for line in generated_results:  #중복제거
+        for line in generated_results:  # remove redunduncy
             dics[line['id']] = line  
-        sorted_values = [value for key, value in sorted(dics.items())]  # 정렬
+        sorted_values = [value for key, value in sorted(dics.items())] 
 
     with open(f'answer_generation/generated/{config.category}/{config.generator}/base.json', 'w') as f:
         json.dump(sorted_values, f, indent=4)

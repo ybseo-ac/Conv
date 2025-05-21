@@ -385,27 +385,7 @@ class DIT(nn.Module, huggingface_hub.PyTorchModelHubMixin):
       config.zero_init_finallayer)
     self.scale_by_sigma = config.model.scale_by_sigma
     
-    ### train 할때 필요한거지만 gpu parallel 을 위해 여기에 심음.
-    if self.config.class_noise_type=='absorb-prior':
-      
-      token_prior = torch.load(f'{config.util_data_dir}/all_prior_{self.config.prior_type}.pt') #default tfdf
-      self.register_buffer('token_prior', token_prior , persistent=False)
-      if self.config.prior_line=='pow': # default
-        self.token_prior= self.token_prior.pow(0.1)
-      elif self.config.prior_line=='clip':
-        self.token_prior= self.token_prior.clip(max=0.001)
-      elif self.config.prior_line=='original':
-        pass
-      
-      a= self.token_prior.max()
-      self.register_buffer('prior_mult', (self.config.prior_max / a) , persistent=False)   # 곱했을 때 max 값이 prior_max가 되도록 함. 디폴트 0.9
-      
-      if self.config.prior_kill_high_and_low:
-        ordered_log = token_prior[token_prior.argsort(descending=True)].log()
-        middle_ind = len(token_prior)//2
-        middle_val = ordered_log[middle_ind]
-        self.token_prior = (torch.abs(ordered_log - middle_val) + middle_val).exp()
-        
+   
 
   def _get_bias_dropout_scale(self):
     if self.training:
