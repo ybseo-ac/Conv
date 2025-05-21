@@ -1,0 +1,4034 @@
+[
+    {
+        "instruction": "Please give me an explanation about ``Mark Twain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fae46b21",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Genghis Khan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f0ab0e4a",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Catherine II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b534154a",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Vietnam War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3a55e6b9",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Australia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "685394dd",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Syria''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "751d759e",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Al Gore''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d3e46bd3",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``American Civil War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "80a879e8",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pius IX''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0ee1c663",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``King Henry VIII''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bf70ca89",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``French and Indian War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f806b760",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Russia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bdd27e3e",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Indiana''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "74d31e70",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Al Gore''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6f2e32f3",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``James Monroe''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e4b4dd97",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Iraq''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0335c8c8",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Yugoslav Wars''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "dcb88217",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Danish monarchy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "37797c48",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sudan.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9c4ac49b",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elizabeth Cady Stanton''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e6ff8df3",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gettysburg.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "19623aa1",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Missouri''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "050dd488",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Vietnam War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "795df379",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Vietnam War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "12db28d2",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``War of 1812''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "196d527e",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Russian Civil War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7d9bccd9",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``World War II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "99e9637a",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Black War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "11c5224c",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alexander the Great''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "72070e75",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``James Buchanan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2da89f04",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Genghis Khan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8664e472",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Iraq War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "43f5ba74",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Henry VIII''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "abf34b30",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``World War II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "741599e6",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Revolutionary War''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a6681c23",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``War of 1812''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "eca4fcc1",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Mongol Empire''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8abed6cf",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Battle of Verdun''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4fcda5ee",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``World War II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b7b89230",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alan Bean''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "580509d9",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Korean war''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "78c6d732",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bill Clinton''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "013d9473",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Hillary Clinton''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6ab28e65",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Donald Trump''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bbbfa328",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Donald Trump''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "10e9eda0",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gerald Ford''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0f8f1450",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ethiopia and Liberia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2246db24",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gerald Ford''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3859c98f",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``William II of England''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "66af03da",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``James Buchanan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "64b1815c",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ananda Mahidol''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5789228d",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Hotepsekhemwy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3e7bcbca",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gerald Ford''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1e38b876",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Rhode Island''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "696a227f",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``William Hornblower''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a72be07e",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``James Buchanan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1809b13b",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``World War I''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "132ad04a",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e62e4c66",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Great Britain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "df48778c",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John F. Kennedy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5bf37f45",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elizabeth Harrison Walker''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "897c3d3f",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alice Roosevelt Longworth''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "60609d8e",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elizabeth I''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0705035b",
+        "category": "history"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Drake''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d2a03f72",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Backstreet Boys''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2ac68339",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elvis Presley''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "143ffa94",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Beyonce''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "276a5680",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Beyonce''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "58dd9f17",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jonny Cash''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6f64e3b7",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Justin Bieber''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "12f5ea62",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dangerously in Love''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ff035fb6",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Eminem''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "39dcc13e",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Exile on Main St.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1e56c751",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Kanye West''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8ad7ce6b",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jay Z''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3408ff74",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lil Nas X''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3c1634d0",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pink''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a9521702",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Prince''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b12a3681",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mick Jagger''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ac9c0bc5",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Eminem''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "edacc432",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Britney Spears''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "deff2d12",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bob Dylan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "06b6a8b1",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sting''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "58f57af8",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dr. Dre''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4c362a1a",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Justin Bieber''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "55dea8ba",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Cher''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "baa2d9bf",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sticky Fingers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8e523712",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Best Rock Performance''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6cf79c15",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Niall Horan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "71dd39e5",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Richie Faulkner''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "837d9cd0",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``\"Thick as a Brick\"''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "16681712",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``\"Let It Be\"''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "69329354",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``End of Me''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "15a94141",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Artist of the Year''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1c05e47a",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Abbey Road''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "40fa77ac",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Spirit''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "38f6c638",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Willow ft. Travis Barker: \"Transparent Soul\"''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "214d36c3",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Infinite''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "73dc77db",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``If the World was Ending''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "53e05358",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dean Martin''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e2763c2e",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Jackson''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f9764fe9",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chris Cornell''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0379d712",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Amott''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f10b4ebf",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Black Pumas''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "84df7010",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John Lennon; Ringo Starr; George Harrison''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4cbe900b",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``DNA''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "39f801ca",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Beatles''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "95e5fc47",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Grammy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6d0980c2",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Cliff Burton''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c7f98d9f",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Best Male Rock Vocal Performance - 2004''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "49e70bac",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Best Male Rock Vocal Performance - 1999''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2831f7e0",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Best Male Rock Vocal Performance - 1981''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "aaeaa1e2",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ian Stewart''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f6d26bea",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Kurt Cobain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "06b92cca",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Steven Tyler''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6df14f7a",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Fergie''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "64e929a2",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``=''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "66648569",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tom DeLong''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a6fff981",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bloodflowers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5c2683f7",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Nicky Byrne''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e222ec32",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tupac Shakur''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "88386a3c",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bono''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9df0fca5",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Axl Rose''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "eb9edaee",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ronald Wood''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6e95bddc",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John Lennon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e5b3d48e",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Kesha''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d7e4b237",
+        "category": "music"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elvis Presto''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b41ae115",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``LeBron James''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "124120c5",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Red Sox''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d27c2a7f",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Serena Williams''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3f6ccceb",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Patriots''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "55567134",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Beckham''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "90d68421",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dallas Cowboys''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "531bf2c9",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Serena Williams''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "186595b5",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ben Roethlisberger''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fbde3bf3",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jack Nicklaus''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5e7f2ee5",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Celtics''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "094a74ba",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``steph curry''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "36eb75fa",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Aaron Judge''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9e59d28b",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lebron James''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a5ff8969",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Messi''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1c62c06e",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Kobe Bryant''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b9f71281",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tom Brady''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5315e7cf",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Buffalo Bills''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "23cf2812",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Frank Gore''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cfdf7674",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Wayne Gretzky''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "112e2782",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Barry bonds''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3b8628b5",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Boston Red Sox; New York Yankees; Philadelphia Phillies; Detroit Tigers; Chicago White Sox; Chicago Cubs; Cincinnati Reds; St. Louis Cardinals; Cleveland Indians; Pittsburgh Pirates; New York Mets; Tampa Bay Rays; Florida Marlins; Houston Astros (Colt '45s); Kansas City Royals; San Diego Padres; Los Angeles Angels of Anaheim; Seattle Mariners.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "92825402",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Bowl XXX and Super Bowl XLV''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9fbccd64",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Paolo Maldini''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7f66bcd7",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Bowl XXXII''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8b6223f5",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chicago Cardinals''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ec38da6d",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Cleveland Indians''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8f31b551",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Uneven Bars and Balance Beam''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f85bb1f0",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bobby Richardson''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ea7b23d8",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Seattle Seahawks''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a5fd598d",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Nassau Coliseum''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "40d8618b",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Jordan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c4e9ea70",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Andy Pettitte''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "708ecd6a",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Jordan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "66baef32",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Joe Maddon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c0107701",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Frello Jorginho''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5d846a24",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Zlatan Ibrahimovic''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a8c3334a",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Los Angeles Lakers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d653484b",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New York Yankees''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "97034384",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``J\u00fcrgen Klinsmann''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8fa81200",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Louis Herman Klotz''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "93575f2e",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Draymond Green''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f64f47ee",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Los Angeles Lakers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "135b3e90",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``San Fransisco Giants''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2d6bd90a",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New England Patriots''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "39557ad0",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alice Coachman in 1948''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "076d5fc1",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The London Olympics of 2012''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "19d904f3",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mike Piazza''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "367ec36e",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Danny Ainge''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4317a7d7",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chicago Bears''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ffb0a7ec",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bobby Cox''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6970471d",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lenny Krayzelburg''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "44594446",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``MyKayla Skinner''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b2ab6997",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Oakland Athletics''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "80a6caec",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``San Francisco 49ers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a26ddbac",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New England Patriots''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "59824016",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``LeBron James''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c0688deb",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Texas Rangers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "23f20198",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Saquon Barkley''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0e2e1ddb",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Jordan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "da54f46d",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Shaquille O'Neal''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d49087ca",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Earvin \"Magic\" Johnson Jr.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d757d5f4",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Cleveland Browns''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "85ac6b62",
+        "category": "sports"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Jazz Singer''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7ed1858c",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Monsters Inc''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "dbc6f3e8",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Avatar''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f5ef3179",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Avatar''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "44b1cebb",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Martin Scorsese''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "68d99361",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Brad Pitt''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f944bc67",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chris Pratt''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "08a4f6d8",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Anna Farris''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "024c6fdf",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Morgan Freeman''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "27d19315",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Eternal Sunshine of a Spotless Mind''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b1a6b070",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Saoirse Ronan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5961ba76",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Toy Story 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b3d206a4",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Iron Man 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fc695c10",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Reese Witherspoon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "11051fc8",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Up''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "31726d08",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Adam Sandler''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "accc4472",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``James Cameron''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "003f7413",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Clint Eastwood''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f6b351bd",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Damien Chazelle''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "65b5ce38",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Memento''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "61216214",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tenet''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c3f408f4",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Empire Strikes Back''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fb2d9d08",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Big Eyes''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "38fd3c37",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Natural Born Killers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9c6eed48",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Batman Begins''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c1ea93a6",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Unbreakable''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "24352a83",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Game Plan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8a960b7b",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Iron Man 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e2ed2b5b",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Terminator:Salvation''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8d81fca7",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Taxi Driver''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4124bb03",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lucille Ball''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "89b0c6e1",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Annette Bening''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "35589eac",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Grave of the Fireflies''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "be7b79d6",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Revenge of the Creature''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "876037a1",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Major League: Back to the Minors''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ae6e8775",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Hellraiser Revelations and Hellraiser Judgment''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "67f89425",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Spider-Man: Far From Home''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "36a2d0c2",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Fellowship of the Ring''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0da0a9bc",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Last Jedi''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6662034e",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Soul''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f00f3b75",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Rock''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "efff5c79",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lady Bird''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1b267e7b",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Friday the 13th 1981''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "90a83cdd",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Iron Man''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "99f72375",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``At Eternity's Gate''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cc6f6960",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Yuko Takeuchi''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "aab8e9ee",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Mandalorian''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9c20797c",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter and the Prisoner of Azkaban''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "16caac54",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Grave of the Fireflies''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "37b5b4fc",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jack and Jill''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "28332e38",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tom Cruise''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "57ed9851",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Fight Club''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "293f70d0",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Die Hard''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2568c6c0",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harrison Ford''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "39f078ad",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Enter The Dragon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "120036fc",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Jazz Singer''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c5157a43",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Richard Attenborough''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d4a4ad9f",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Memoirs of a Geisha''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c0db4c57",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Fight Club''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d7a1ef27",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``THX 1138''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "24e8eae1",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Roy Scheider''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e5d1c788",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Edward Scissorhands''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "28c79e06",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jennifer Lawrence''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d28e564f",
+        "category": "movies"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Maine''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bfc9807b",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0cdcd4b7",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b2ec24ed",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``It''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d1dbe0e2",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Magic Treehouse''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "71f26dc3",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f58b694a",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The MacGregors''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "aa73af9b",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The MacKade Brothers''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7729770f",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pale Fire''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f904c835",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Divergent''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0aae5204",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Southern Vampire Mysteries''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ecba59f6",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Game of Thrones''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "13bbf715",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Twilight''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a62189de",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lord of the Rings''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f468fef7",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Hobbit''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b5b28eb9",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Fire from Heaven''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "05e13221",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cc01a2c1",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Hobbit''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7576776d",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Twilight''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2be53c2b",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``This Side of Paradise''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b43c2bb4",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Castle Rock''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b17ce75a",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Boromir''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e43b566e",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Rage''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "db8dec00",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Beezus and Ramona''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d135bcf2",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Didn't See That Coming''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "46c39b30",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Midnight Sun''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "de55500e",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Whitefern''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e4d57021",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Fable''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e67ea969",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Wide Window''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b0c53efb",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Prince Caspian''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bb293aad",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pulitzer Prize''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "01d63445",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Golden Compass''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7ddbd7f7",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ender's Shadow''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "278311b6",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Harry Potter and the Deathly Hallows''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "32954abb",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Last Battle''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6c229e10",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Midnight Sun''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "27feb3de",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Passing and The Royal Murders''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "767378b4",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Deathly Hallows was turned into two movies. Part 1 and Part 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3d5b762e",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sleeping Murder''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cd31184e",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Shepherd's Crown''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "88116c97",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Big Shot''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7a9e0466",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alexandra Finch''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a5e07d6f",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tom Bombadil''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "efe3a064",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gwendy's Final Task''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "afaa7618",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Breaking Dawn''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "48c5799f",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Vector Prime''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c484ec83",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Mist''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "67b88111",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John Updike''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a0462782",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George R. R. Martin''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "07f850f2",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tom Clancy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ecdedb9f",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michael Chabon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "65f3ab8d",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sybill Trelawney''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d4d2fdb6",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Aleph''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ca15842b",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Clash of Kings''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "512730cb",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Toni Morrison''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0ac033b6",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Clash of Kings''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7b62219d",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Last Command''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8f909e92",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Clash of Kings''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "633ae5e5",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Storm of Swords''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "382f8d10",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``A Dance with Dragons''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fd04768e",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Samuel Langhorne Clemens''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3d1f9473",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Judy Blume''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "30ab1145",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Divergent''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e40ff72c",
+        "category": "books"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Missouri River''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5a22bcfd",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Moldova''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0bcca894",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Death Valley California''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7c8a9755",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Canada''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "11a5ec29",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Canada''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4a84d3f3",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``India''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a4dadc62",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``U.S.A.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "76f0c12d",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Antarctica''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "aa329970",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``China''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ecb559ed",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chihuahuan Desert''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "90061365",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Amazon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e689417a",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Syria''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4d041b78",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Zambia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "44ae04a2",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Benin''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a6003702",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New York''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "05770fb8",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Colombia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "61be39fb",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pakistan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3466fa30",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``United States''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "edab5367",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``France''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b363cc74",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New York''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b6432ffe",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Acre''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4bfec187",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Superior''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bdc83e96",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Chile''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fb414b76",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Canada''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6a5bd9e8",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Russia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6cec71bc",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Amazon River''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "352ad1ad",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mount Aconcagua''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "35c12620",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Antarctica''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2fee86a8",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sweden and Switzerland''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "08760ac4",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Canada''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bf3a1127",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tasmania''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6faa0109",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michigan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a2001938",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Indian and Arctic Oceans''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4d419534",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ural Mountains''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2fa86d98",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mt. Shasta''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "80de3b2d",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Europe''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "90b61d8d",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bolivia and Paraguay''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e6778fa6",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Palo Duro Canyon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "e2760b59",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Delaware''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0bf97e9f",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michigan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d4f6d631",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alaska and Hawaii''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7128550a",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Thailand''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fae67898",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``K2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "438412c6",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alaska''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4ddd4a5a",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Nile River''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5f77ebf5",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mississippi River''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "83bd66f6",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Wyoming''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fd0865a0",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lake Victoria''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "07ca6540",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Manila''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "27f38531",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Columbia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "270aa5b6",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sweden''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9587ca46",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Colorado''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0a0effbc",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``New York City''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "970511a0",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``California''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "992a4c86",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Las Vegas''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c2e25490",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Missouri River''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6f9b2497",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lake Michigan-Huron''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d40a1ec7",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``California''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b151a9bd",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mount Fuji''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ee83557f",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mount Fuji''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fa806837",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Amazon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "eea0e121",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Antarctica''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4ce9d960",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alaska''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2d829171",
+        "category": "geography"
+    },
+    {
+        "instruction": "Please give me an explanation about ``California''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1a671874",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pennsylvania''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2369a8f4",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Turkey''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c2bc39fd",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Afghanistan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f176306f",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pennsylvania''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7a9e4389",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Abraham Lincoln''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "876c07e9",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``California had higher than any other state''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b04bd322",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George Washington''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6ad0be15",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Texas''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6e741fc6",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``North Carolina''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "45b38f17",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Florida''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b9d22920",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Minnesota''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a67795d2",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Florida''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "66c65f31",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Texas''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3c38700d",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``South Carolina''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cd6c5a7c",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Alabama''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f6266240",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Theodore Roosevelt''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7fd7b589",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tennessee''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4cc76321",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mitt Romney in 2012''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bb599ae9",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Marco Rubio''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9cc5ac9c",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John McCain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "929780d5",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Merrick Garland''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2f26819b",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``2000''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d768af60",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Lloyd Bentsen and Bob Kruger''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f29d61fd",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Benjamin Harrison''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "de6a6f75",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Arnold Schwarzenegger''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "86e6969f",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ann Richards''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4acdb905",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Minnesota''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f895b2a9",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Minnesota''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fedb1035",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Massachusetts''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "03725402",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Northern Marina Islands''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5fc4328d",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``American Samoa''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "39f033a7",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George Pataki''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9c43097c",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Barack Obama''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6b37bff2",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Kamala Harris''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f819cbf0",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John McCain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b6ef870b",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Barack Obama''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "664fe719",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Jerry Lawler''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5363b306",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George Deukmejian Pete Wilson and Arnold Schwarzenegger''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8dc923b9",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Georgia''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f4868604",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George Washington''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b3b54ff4",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``William Henry Harrison and James A. Garfield''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2d920bb8",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``1988 Democratic Party primary''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "70e964d4",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sharon Angle''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b87f047a",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mike Huckabee''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0be8e722",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John McCain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "09d17d8e",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Michigan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2820242d",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gavin Newsom''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9cd49eb7",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Condoleezza Rice''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c14e6045",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Barack Obama''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4de834bb",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``George H.W. Bush''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "335b0a96",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Bill Clinton''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "a5dcabbb",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mitt Romney''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3a88fac1",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Tim Scott''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "62990870",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Franklin D. Roosevelt''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "46ec1a77",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``John Adams''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "192af9d2",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Carly Fiorina''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "63fabb00",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Marsha Blackburn''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "bfdfa867",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mark Kirk''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "b0e7adc0",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``rob portman''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "232f7618",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``josh hawley''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "84dd74e9",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Donald Trump''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0d1cf0bf",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ronald Reagan''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "03600fe3",
+        "category": "politics"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mario''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "3d416d3a",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``IGN''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7b7f96cc",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Ratchet & Clank''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "653c4261",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy 14''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "9224af9a",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Street Fighter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "61462051",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Call Of Duty''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "53c24273",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1d7f0684",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mega Man''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5588639b",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sega Genesis''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "919c28ec",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Street Fighter''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c912543c",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Fall Guys''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7e092fc3",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Goldeneye 007''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "293e2f05",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Playstation''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "2c0b4bcb",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``pokemon''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "484bb17a",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mario Kart Live: Home Circuit''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "5c6d6e7f",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Nintendo Switch Lite''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "1bd26e2a",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pokemon gold and silver''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7e81e001",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``BioShock 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6e4912e1",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Smash Bros. Brawl''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "60cb16a0",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pathfinder''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "26f8bbb4",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mario Kart Live: Home Circuit''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "79897a8a",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gears Tactics''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "cb996a64",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mario 64''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "110c1f6c",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The California Raisins''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "356fbec5",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Donkey Kong 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "22a0e054",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy V''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4743945f",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Sonic 1''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "04007cbc",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Mortal Kombat 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "766296e4",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Elder Scrolls Online''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "51fe68e4",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Plunder''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "98aed9e3",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Halo 5''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "d48d5ca7",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``The Legend of Zelda: The Minish Cap''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "56121a15",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Nintendo Entertainment System''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8a68bc27",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dragon Quest VII''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "600dbc47",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Snake's Revenge''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "13e30180",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Dead Rising 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8cc27278",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Black Ops 4''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "52d2b4f4",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Battlefield 1942''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f15205eb",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Battlefield 2042''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "43a6cbe5",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Vampire: The Masquerade Bloodlines 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "7262f2f3",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Donkey Kong Country''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "76074904",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Quake II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "86388912",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Doom''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "ccbf0f52",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Mario Bros. 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f8a326ea",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Gauntlet''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0b549148",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``PlayerUnknown's Battlegrounds''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "fb8d0cc5",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Mario Sunshine.''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "07d941a2",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final fantasy 13''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "36c5df28",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pok\u00e9mon yellow version''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "6015919d",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy IX''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "95b4ddf3",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy VIII''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0dd8b651",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Mario Bros. 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "923e62bb",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Pokemon X and Y''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "c2cce1c8",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``GTA Vice City''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "f51e5d03",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Metal Gear Solid V: The Phantom Pain''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4e9a02ab",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Resident Evil 7''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "da8f6cd0",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``shenmue 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "8fef88e9",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Syndicate''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "4ffd2599",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Star Wars: Battlefront II''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "0e656c83",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Final Fantasy I''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "718462b2",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Smash Bros Ultimate''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "02ffcc5e",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Super Mario Bros. 3''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "15d78caf",
+        "category": "videogames"
+    },
+    {
+        "instruction": "Please give me an explanation about ``Megaman 2''.",
+        "output": "",
+        "generator": "",
+        "dataset": "wiki",
+        "id": "48f0edf8",
+        "category": "videogames"
+    }
+]

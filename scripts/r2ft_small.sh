@@ -1,0 +1,26 @@
+python tr2_finetune.py \
+init_from_checkpoint.bool=True \
+init_from_checkpoint.init_file=outputs/ft_small.ckpt \
+data.tokenizer_name_or_path=gpt2 \
+lora.bool=False \
+finetune.bool=True \
+backbone=dit \
+wandb.name=r2ft_small \
+parameterization=subs \
+T=0 \
+model.length=1024 \
+eval.retokenize=True \
+save_weight_only=True \
+forward_type=ddpm \
+optim.lr=2.5e-5 \
+optim.weight_decay=0.1 \
+loader.global_batch_size=256 \
+lr_scheduler.num_warmup_steps=500 \
+sampling.predictor=ddpm \
+sampling.num_sample_log=6 \
+loader.batch_size=1 \
+loader.eval_batch_size=1 \
+finetune.attention_cover=response \
+finetune.dataset=src_data/ft_data/tokenized_alpaca_instruction \
+finetune.valid_size=20 \
+val_eos_off=False
