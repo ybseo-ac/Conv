@@ -10,7 +10,7 @@ Autoregressive (AR) language models generate text one token at a time, which lim
 
 ### Installation
 
-```python
+```bash
 CUDA 12.1
 $ conda create --name conv python=3.9
 $ conda activate conv
@@ -41,7 +41,7 @@ bash scripts/generate_large_inst.sh
 
 This bash script contains the following command, which generate with ***Conv* (convolutional decoding).**
 
-```
+```bash
 python gen1_1_answer_generation.py \
 init_from_checkpoint.init_file='' \
 data.tokenizer_name_or_path=GSAI-ML/LLaDA-8B-Instruct \
@@ -111,7 +111,7 @@ We provide code for SFT and RFT
 
 First, the dataset is tokenized and saved.
 
-```python
+```bash
 python tr1_make_dataset.py \
 +model_type=small
 
@@ -139,7 +139,7 @@ bash scripts/sft_large.sh
 
 This script contains the following command.
 
-```
+```bash
 python tr2_finetune.py \
 data.tokenizer_name_or_path=gpt2 \
 lora.bool=False \
@@ -176,7 +176,7 @@ bash scripts/r2ft_large.sh
 
 This script contains the following command.
 
-```
+```bash
 python tr2_finetune.py \
 init_from_checkpoint.bool=True \
 init_from_checkpoint.init_file=outputs/ft_small.ckpt \
