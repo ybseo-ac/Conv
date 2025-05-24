@@ -1,4 +1,3 @@
-
 # Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning
 
 ---
@@ -40,7 +39,7 @@ Generating responses with already fine-tuned model from [2] (LLaDA-8B-Instruct).
 bash scripts/generate_large_inst.sh
 ```
 
-Generation with ***Conv* (convolutional decoding)**
+This bash script contains the following command, which generate with ***Conv* (convolutional decoding).**
 
 ```
 python gen1_1_answer_generation.py \
@@ -67,9 +66,9 @@ master_port=65535 \
 
 ## Convolutional decoding
 
-![conv_pipeline.png](conv_pipeline.png)
+![conv_pipeline.png](attachment:9f431e32-f638-48e4-aa3b-6d507c025e5c:conv_pipeline.png)
 
-Code for convolutional decoding is in    `decoding_tools.py >  def ddpm*_*convolution_update()`
+Implementation for convolutional decoding is in    `decoding_tools.py >  def ddpm*_*convolution_update()`
 
 ```python
 ...
@@ -110,6 +109,8 @@ We provide code for SFT and RFT
 
 ### Tokenize datasets
 
+First, the dataset is tokenized and saved.
+
 ```python
 python tr1_make_dataset.py \
 +model_type=small
@@ -121,18 +122,90 @@ python tr1_make_dataset.py \
 +model_type=llama
 ```
 
+### Download checkpoints
+
+For SFT and RFT, download the pretrained checkpoints as follows: the small model from [1], and the large model from [2].
+
 ### SFT
+
+Commands for SFT.
 
 ```bash
 bash scripts/sft_small.sh
 bash scripts/sft_large.sh
 ```
 
+This script contains the following command.
+
+```
+python tr2_finetune.py \
+data.tokenizer_name_or_path=gpt2 \
+lora.bool=False \
+finetune.bool=True \
+backbone=dit \
+wandb.name=ft_small \
+parameterization=subs \
+T=0 \
+model.length=1024 \
+eval.retokenize=True \
+save_weight_only=True \
+forward_type=ddpm \
+optim.lr=2.5e-5 \
+optim.weight_decay=0.1 \
+loader.global_batch_size=256 \
+lr_scheduler.num_warmup_steps=500 \
+sampling.predictor=ddpm \
+sampling.num_sample_log=6 \
+loader.batch_size=1 \
+loader.eval_batch_size=1 \
+finetune.attention_cover=response \
+finetune.dataset=src_data/ft_data/tokenized_alpaca_instruction \
+val_eos_off=False
+```
+
 ### R2FT
+
+Commands for R2FT with SFT checkpoints.
 
 ```bash
 bash scripts/r2ft_small.sh
 bash scripts/r2ft_large.sh
+```
+
+This script contains the following command.
+
+```
+python tr2_finetune.py \
+init_from_checkpoint.bool=True \
+init_from_checkpoint.init_file=outputs/ft_small.ckpt \
+data.tokenizer_name_or_path=gpt2 \
+lora.bool=False \
+finetune.bool=True \
+r2ft.bool=True \
+r2ft.gamma=0 \
+r2ft.beta_w=1 \
+r2ft.beta_l=1 \
+r2ft.beta_a=0.1 \
+backbone=dit \
+wandb.name=r2ft_small \
+parameterization=subs \
+T=0 \
+model.length=1024 \
+eval.retokenize=True \
+save_weight_only=True \
+forward_type=ddpm \
+optim.lr=2.5e-5 \
+optim.weight_decay=0.1 \
+loader.global_batch_size=256 \
+lr_scheduler.num_warmup_steps=500 \
+sampling.predictor=ddpm \
+sampling.num_sample_log=6 \
+loader.batch_size=1 \
+loader.eval_batch_size=1 \
+finetune.attention_cover=response \
+finetune.dataset=src_data/ft_data/tokenized_alpaca_instruction \
+finetune.valid_size=20 \
+val_eos_off=False
 ```
 
 ### Generate
@@ -159,7 +232,7 @@ python eval_gsm8k.py \
 
 ### Copyright
 
-These codes are based on the GitHub repository of MDLM [1], and partially of LLADA [2].
+These codes are based on the GitHub repository of MDLM [1], and partially LLADA[2].
 
 ---
 
