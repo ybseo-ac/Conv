@@ -66,7 +66,7 @@ master_port=65535 \
 
 ## Convolutional decoding
 
-![conv_pipeline.png](attachment:9f431e32-f638-48e4-aa3b-6d507c025e5c:conv_pipeline.png)
+![conv_pipeline.png](conv_pipeline.png)
 
 Implementation for convolutional decoding is in    `decoding_tools.py >  def ddpm*_*convolution_update()`
 
