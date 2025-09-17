@@ -1,0 +1,231 @@
+defaults:
+  - _self_
+  - /callbacks: [checkpoint_every_n_steps, checkpoint_monitor, learning_rate_monitor]
+  - /data: openwebtext
+  - /model: small
+  # - /model: small-ar
+  - /strategy: ddp
+  - /noise: loglinear
+  - /lr_scheduler: constant_warmup
+
+mode: train  # train / ppl_eval / sample_eval
+diffusion: no_info # 뭐든 상관없는듯. 걍 info
+backbone: dit  # dit / dimamba / ar / dit_positional
+parameterization: subs  # subs / d3pm / sedd
+time_conditioning: False
+T: 0  # 0 (continuous time) / 1000 
+Tp: 20 # permutations until t=T
+subs_masking: False
+
+### cppm ###
+permute_decode_type: uniderection # unidirection / commutative  # cppm
+
+## train: 
+
+forward_type: ddpm # cppm / ddpm   # ddpm은 class only 를 의미
+
+# class noise schedule
+class_noise_type: absorbing  #  uniform / absorbing /absorb-uniform
+uniform_gamma_denom: 4    #  larger -> noise is smaller
+uniform_gamma_type: linear # linear / convex / concave  # t에 따른 변화 확률 증감 스타일
+
+# position noise schedule
+positional_zeta_type: linear # linear / convex   # t에 따른 w + j 상한선 증감 스타일
+positional_zeta_min: 5
+positional_zeta_max: 100
+positional_transition_cycle: recurrent # recurrent / once    # recurrent : multiple times
+
+# theta_m
+lr_theta_m: 10
+theta_m_sample_type: only_m # only_m / blended_m
+theta_m_type: linear # linear/ add_linear
+
+# absolve-prior  #  if class_noise_type=='absorb-prior'
+moving_prior_mult: True
+prior_type: tfdf
+prior_line: pow
+prior_max: 0.9
+prior_reverse: False
+prior_kill_high_and_low: False  # bothkill.  reverse일 경우 prior high와 low 가 마스킹될 가능성을 모두 줄임 -> 모델이 둘을 덜 학습하게 만듦.
+
+# prior based filter
+train_prior_filter: False
+log_l_tilt: 1
+log_r_tilt: 1
+stds_l_tilt: 1
+stds_r_tilt: 1
+
+# repeat_dpo
+repeat_dpo:
+  bool: False
+  min_phase_len: 15
+  beta_w: 1
+  beta_l: 1
+  beta_a: 1
+  gamma: 0
+  denom: mask_len
+
+#topk decoding
+# topk:   # deprecated. merged with  sampling.topk_k
+#   bool: False  # no use
+#   k: 20
+
+
+#
+finetune:
+  bool: False
+  attention_cover: response # response / response_and_eos
+  dataset:
+  valid_size: 100  # valid_num_limit 와 무관함. finetune에만 관여함.
+  eos_p: 1  # q_xt_finetune_repeat 에서 xb에 무작위로 eos 를 넣을 확률
+  max_z: 50  # q_xt_finetune_repeat 에서 repeat over area 의 최대 길이
+  repeat_longer_than_x0: False # q_xt_finetune_repeat 에서 repeat area의 최대 범위를 무조건 x0 보다 길거나 같게 함.
+
+val_eos_off: False  # 거의 finetune에만 연관되긴 함. validation 할때 eos 토큰을 제외하고 측정.
+
+ar:
+  decoding: nucleus # nucleus / categorical / topk
+  nucleus_p: 0.95 
+  topk_k: 20
+  eos_after_gen: False  # training 시 옵션.  output 뒤에 eos 하나만 올지(False), eos 여러개가 오고 거기에 대해 모두 attention 하는지.
+
+#
+init_from_checkpoint:
+  bool: False
+  init_file:
+#
+save_weight_only: False
+valid_num_limit: 0  # >0 이면 valid dataset 크기를 이렇게 제한함.  # finetune때는 작용 안함.
+####
+util_data_dir:
+
+#### develope
+zero_init_finallayer: True  # default is True. set False for develope
+
+##############
+
+seed: 1
+
+loader:
+  global_batch_size: 512
+  eval_global_batch_size: ${.global_batch_size}
+  # Note: batch_size and eval_batch_size are **per machine**
+  batch_size: 4
+  eval_batch_size: 4
+  # 원래 batch, eval_batch  사이즈 자동계산이었는데 (64) 임의로 줄임. 이렇게 하니 됨.
+  num_workers: ${eval:"len(__import__('os').sched_getaffinity(0))"}
+  pin_memory: True
+
+sampling:
+  predictor: ddpm_cache  # analytic, ddpm, ddpm_cache, ddpm_topk , ddpm_convolution, ddpm_topk_cache
+  steps: 128
+  noise_removal: True
+  # TODO(yair): @subham, why aren't these params under `eval`?
+  num_sample_batches: 2  # Total samples: `num_gpus` * `loader.eval_batch_size` * num_sample_batches
+  num_sample_log: 2
+  semi_ar: False # 이건 오리지날 코드용
+  stride_length: 1
+  num_strides: 1
+  #convolution 관련 param들
+  convolution_kernel_size: 51
+  conv_mult: 1
+  topk_k: 0  # ddpm_topk, ddpm_cache_topk, ddpm_convolution 에 관여함.
+  # ddpm_convolution에서는 k==0 이면 categorical이 됨.  >0 이면 top k.
+  #semi-ar
+  semi_ar_bool: False  # semi_ar if True  # 
+  semi_ar_stride_length: 512 # == B
+  #caching
+  eos_fill: False   # 한번 eos가 나타나면 그 뒤쪽은 모두 eos로 채움
+  temperature: 1
+  #repetition penalty
+  repetition_penalty: 1   # 1 이면 없는거임 ***.  1 보다 클수록 페널티가 쎄짐짐
+  #remdm
+  alpha_on: 0.9
+  t_on: 0.55
+  t_off: 0.05
+  eta: 0.04
+
+training:
+  ema: 0.9999
+  antithetic_sampling: True
+  importance_sampling: False
+  sampling_eps: 1e-3
+  change_of_variables: False
+
+eval:
+  checkpoint_path: ''  # Used to evaluate a checkpoint after training.
+  disable_ema: False
+  compute_generative_perplexity: False
+  perplexity_batch_size: 8
+  compute_perplexity_on_sanity: False
+  gen_ppl_eval_model_name_or_path: gpt2-large  # gpt2-large, meta-llama/Llama-2-7b-hf
+  generate_samples: True
+  compute_rep_4gram: False  # 추가함. sample의 repetition 을 n-gram(4) 로 측정
+  compute_prior_std_mean: False  # 추가함. sample의 token prior의 mean, std, 그리고 가각의 L2 distance (median과의) 를 구함.
+  retokenize: True  # finetune 위해 추가함. condition 부분 mask out 하기 위해 finetune_mask 적용해야 하고, 이를 위해 retokenize=False 로 맞춰야함. (근데 이러면 gen_ppl 이 잘 측정이 안됨. 그냥 오류를 감수하고 True로 하기로 함.)
+
+optim:
+  weight_decay: 0
+  lr: 3e-4
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1e-8
+
+trainer:
+  _target_: lightning.Trainer
+  accelerator: cuda
+  num_nodes: 1
+  devices: ${device_count:}
+  accumulate_grad_batches: ${div_up:${loader.global_batch_size}, ${eval:${trainer.devices} * ${loader.batch_size} * ${trainer.num_nodes}}}
+  gradient_clip_val: 1.0
+  precision: 'bf16'
+  num_sanity_val_steps: 2
+  max_steps: 1_000_000
+  log_every_n_steps: 10
+  limit_train_batches: 1.0   # train on full dataset, can be used to toggle quick run
+  limit_val_batches: 1.0     # validate on full dataset, can be used to toggle quick run
+  val_check_interval: 10000
+
+### llada 
+lora:
+  bool: False
+  lora_alpha: 16
+  lora_dropout: 0.1
+  lora_r: 64
+
+
+wandb:
+  project: text-diffusion
+  notes: Mulan for text
+  group: null
+  job_type: null
+  name: null
+  id: ${.name}_${seed}
+  tags:
+    - ${noise.type}
+    - ${data.train}
+    - ${data.valid}
+
+hydra:
+  run:
+    dir: /outputs/${data.train}/${now:%Y.%m.%d}/${now:%H%M%S}
+
+  job:
+    chdir: true
+
+checkpointing:
+  # Use custom `save_dir` if, e.g., saving to S3 bucket, otherwise leave this parameter as is
+  save_dir: ${cwd:}
+  # Note: `checkpoints` path should correspond to `checkpoint_every_n_steps.dirpath`
+  resume_from_ckpt: true
+  resume_ckpt_path: ${.save_dir}/checkpoints/last.ckpt
+
+
+model_max_length: 1024   # 내가 추가함
+
+
+## bidirection 실험
+bidirection: False
+bi_what: eos
+
+master_port: 123456
