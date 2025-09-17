@@ -1,6 +1,6 @@
 # Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning
 
-**Yeongbin Seo, Dongha Lee*, Jaehyung kim*, Jinyoung Yeo*      ( ***  indicates advisors)
+**Yeongbin Seo,  Dongha Lee †, Jaehyung kim †, Jinyoung Yeo † **      ( †  indicates advisors)
 
 ---
 
