@@ -1,6 +1,6 @@
 # Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning
 
-**Yeongbin Seo,  Dongha Lee †, Jaehyung kim †, Jinyoung Yeo † **      ( †  indicates advisors)
+**Yeongbin Seo,  Dongha Lee †, Jaehyung kim †, Jinyoung Yeo †**      ( †  indicates advisors)
 
 ---
 
@@ -250,7 +250,7 @@ bash scripts/generate_large_gen2.sh
 
 ```
 
-(gen1_ ...py   is based on MDLM[1] code
+(gen1_ ...py   is based on MDLM[1] code. 
 gen2_ ...py is based on LLADA[2] code.
 We recommend gen2 )
 
